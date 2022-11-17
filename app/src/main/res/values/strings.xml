@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">kucharska</string>
+    <string-array name="typ">
+        <item>napoje</item>
+        <item>ciasta</item>
+
+        <item>ciastka</item>
+        <item>Deser</item>
+        <item>sniadania</item>
+        <item>obiady</item>
+
+    </string-array>
+</resources>
