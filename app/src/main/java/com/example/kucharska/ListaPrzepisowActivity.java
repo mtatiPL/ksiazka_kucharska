@@ -8,13 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class ListaPrzepisowActivity extends AppCompatActivity {
-
+Button button;
     ArrayAdapter<Przepis> adapterPrzepisy;
     ListView ListaViewPrzepisy;
     public static final String EXTRA_IDPRZEPISU="id_przepisu";
@@ -43,6 +45,18 @@ public class ListaPrzepisowActivity extends AppCompatActivity {
             intencja.putExtra(EXTRA_IDPRZEPISU,i);
             intencja.putExtra(EXTRA_KATEGORIA,kategoria);
             startActivity(intencja);
+        }
+    });
+    button=findViewById(R.id.button2);
+    button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            EditText Text;
+            Text=findViewById(R.id.editTextTextPersonName);
+            String nazwaPrzepisu=Text.getText().toString();
+            Przepis przepisDodany=new Przepis(nazwaPrzepisu,2,"mąka, cukier",R.drawable.gofry);
+            wybranePrzepisy.add(przepisDodany);
+            adapterPrzepisy.notifyDataSetChanged();
         }
     });
 
